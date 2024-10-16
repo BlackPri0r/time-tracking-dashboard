@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Rubik;
+
+  background: var(--bgColor);
+
+  --profile: hsl(246, 80%, 60%);
+  --work: hsl(15, 100%, 70%);
+  --play: hsl(195, 74%, 62%);
+  --study: hsl(348, 100%, 68%);
+  --exercise: hsl(145, 58%, 55%);
+  --social: hsl(264, 64%, 52%);
+  --selfCare: hsl(43, 84%, 65%);
+
+  --bgColor: hsl(226, 43%, 10%);
+  --cardBg: hsl(235, 46%, 20%);
+
+  --desatBlue: hsl(235, 45%, 61%);
+  --paleBlue: hsl(236, 100%, 87%);
+
+
+}
