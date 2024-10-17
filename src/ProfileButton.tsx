@@ -1,10 +1,11 @@
 type ProfileButton = {
     text: string
+    OnClick: (timeFrame: string) => void
 }
 
-export default function ProfileButton( {text} : ProfileButton ) {
+export default function ProfileButton( {text, OnClick} : ProfileButton ) {
     return(
-        <button>
+        <button onClick={() => OnClick(text)}>
             {text}
         </button>
     )

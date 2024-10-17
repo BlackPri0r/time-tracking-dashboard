@@ -1,15 +1,37 @@
+import { useState } from 'react'
 import Profile from './Profile'
 import TimeTracker from './TimeTracker'
 import data from './data.json'
 
-function App() {
+interface TimeFrames {
+  current: number;
+  previous: number;
+}
 
+interface Item {
+  title: string;
+  timeframes: {
+    daily: TimeFrames;
+    weekly: TimeFrames;
+    monthly: TimeFrames;
+  };
+  color: string;
+  image: string;
+}
+
+function App() {
+  const [time, setTime] = useState("Weekly");
+
+  const handleSetTime = (timeFrame: string) => {
+    setTime(timeFrame)
+  }
   return (
+
     <>
       <div className="mx-auto grid grid-cols-1 gap-7">
-        <Profile/>
-        {data.map((item) => (
-          <TimeTracker title={item.title} current={item.timeframes["weekly"].current} previous={item.timeframes["weekly"].previous} image={item.image} color={item.color}></TimeTracker> 
+        <Profile handleSetTime={handleSetTime}/>
+        { (data as Item[]).map((item) => (
+          <TimeTracker title={item.title} timeFrames={item.timeframes[time.toLowerCase()]} timeText={time} color={item.color} image={item.image}></TimeTracker> 
         ))}
       </div>
     </>

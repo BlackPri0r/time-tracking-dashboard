@@ -1,6 +1,10 @@
 import ProfileButton from "./ProfileButton"
 
-export default function Profile() {
+type ProfileProps = {
+    handleSetTime: (timeFrame: string) => void;
+}
+
+export default function Profile( {handleSetTime} : ProfileProps ) {
     const buttonName: string[] = ["Daily", "Weekly", "Monthly"];
 
     return(
@@ -15,7 +19,7 @@ export default function Profile() {
   
         <div className="flex text-desatBlue justify-between px-8 py-4">
           {buttonName.map((name) => (
-            <ProfileButton text={name}></ProfileButton>
+            <ProfileButton text={name} OnClick={handleSetTime}></ProfileButton>
           ))}
         </div>
       </div>
