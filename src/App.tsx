@@ -1,24 +1,16 @@
+import Profile from './Profile'
+import TimeTracker from './TimeTracker'
+import data from './data.json'
 
 function App() {
 
   return (
     <>
-      <div className="align-center">
-
-        <div className="bg-cardBg mt-20 mx-6">
-          <div className="bg-profile p-7">
-            <img src="public\image-jeremy.png" className="border-white"></img>
-            <div className="flex justify-center align-center">
-              <div className="">Report for</div>
-              <div className="">Jeremy Robinson</div>
-            </div>
-          </div>
-          <div className="text-white">
-            hello
-          </div>
-        </div>
-
-        
+      <div className="mx-auto grid grid-cols-1 gap-7">
+        <Profile/>
+        {data.map((item) => (
+          <TimeTracker title={item.title} current={item.timeframes["weekly"].current} previous={item.timeframes["weekly"].previous} image={item.image} color={item.color}></TimeTracker> 
+        ))}
       </div>
     </>
   )
