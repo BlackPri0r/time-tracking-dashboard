@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Profile from './Profile'
 import TimeTracker from './TimeTracker'
 import data from './data.json'
