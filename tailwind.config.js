@@ -18,6 +18,7 @@ export default {
         cardBg: 'var(--cardBg)',
         desatBlue: 'var(--desatBlue)',
         paleBlue: 'var(--paleBlue)',
+        cardHover: 'var(--cardHover)',
       },
     },
   },

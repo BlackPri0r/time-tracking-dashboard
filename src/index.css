@@ -19,6 +19,7 @@
 
   --bgColor: hsl(226, 43%, 10%);
   --cardBg: hsl(235, 46%, 20%);
+  --cardHover: hsl(235, 46%, 30%);
 
   --desatBlue: hsl(235, 45%, 61%);
   --paleBlue: hsl(236, 100%, 87%);
